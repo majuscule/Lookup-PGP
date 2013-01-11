@@ -1,4 +1,0 @@
-Run script/lookup_pgp_server.pl to test the application.
-
-/key/* accepts a hexadecimal PGP key ID
-/key/search/* accepts a string, matched against emails
