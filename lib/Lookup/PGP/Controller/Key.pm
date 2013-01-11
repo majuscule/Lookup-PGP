@@ -33,7 +33,8 @@ sub index :Path :Args(1) {
     my @kbs = $server->find_keyblock_by_keyid($id);
     my $keyblock = $kbs[0];
 
-    $c->response->body($keyblock->save_armoured);
+    $c->stash( 'key' => { 'pubkey' => $keyblock->save_armoured });
+    $c->stash(template => 'key.tt');
 }
 
 

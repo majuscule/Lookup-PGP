@@ -29,9 +29,12 @@ sub index :Path :Args(1) {
         Server => 'pgp.mit.edu'
     );
     my @kbs = $server->find_keyblock_by_uid($query);
-    my $keyblock = $kbs[0];
 
-    $c->response->body($keyblock->save_armoured);
+    my @keys;
+    map { push @keys, { 'pubkey' => $_->save_armoured } } @kbs;
+    $c->stash( 'keys' => \@keys );
+
+    $c->stash(template => 'search/results.tt');
 }
 
 
