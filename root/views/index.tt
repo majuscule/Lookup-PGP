@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+  <title>Lookup::PGP</title>
+</head>
+<body>
+
+  <h1>Lookup::PGP</h1>
+  <pre>
+    /key/&lt;id&gt;
+    /key/search/&lt;something you remember about their email&gt;
+  </pre>
+  <h4>Search for PGP keys, get back JSON (with PGP keys).</h4>
+  <h4>Try it:</h4>
+
+  <ul>
+    <li><a href="/key/8CD4C40F">/key/8CD4C40F</a></li>
+    <li><a href="/key/search/dylan@dylansserver.com">/key/search/dylan@dylansserver.com</a></li>
+  </ul>
+
+</body>
+</html>
