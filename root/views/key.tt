@@ -1,5 +1,0 @@
-{ "key" : [
-  {
-    "pubkey" : "[% key.pubkey %]"
-  }
-]}

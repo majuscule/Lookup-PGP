@@ -34,7 +34,7 @@ sub index :Path :Args(1) {
     map { push @keys, { 'pubkey' => $_->save_armoured } } @kbs;
     $c->stash( 'keys' => \@keys );
 
-    $c->stash(template => 'search/results.tt');
+    $c->detach( 'View::JSON' );
 }
 
 

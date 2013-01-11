@@ -1,7 +1,0 @@
-{ "keys" : [
-[% FOREACH key IN keys -%]
-  {
-    "pubkey" : "[% key.pubkey %]"
-  }
-[% END -%]
-]}

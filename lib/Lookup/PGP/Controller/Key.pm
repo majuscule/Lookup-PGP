@@ -34,7 +34,7 @@ sub index :Path :Args(1) {
     my $keyblock = $kbs[0];
 
     $c->stash( 'key' => { 'pubkey' => $keyblock->save_armoured });
-    $c->stash(template => 'key.tt');
+    $c->detach( 'View::JSON' );
 }
 
 
