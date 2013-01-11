@@ -31,7 +31,10 @@ sub index :Path :Args(1) {
     my @kbs = $server->find_keyblock_by_uid($query);
 
     my @keys;
-    map { push @keys, { 'pubkey' => $_->save_armoured } } @kbs;
+    map { push @keys, { 'id' => $_->key->key_id_hex,
+                        'fingerprint' => $_->key->fingerprint_hex,
+                        'pubkey' => $_->save_armoured,
+                      } } @kbs;
     $c->stash( 'keys' => \@keys );
 
     $c->detach( 'View::JSON' );
